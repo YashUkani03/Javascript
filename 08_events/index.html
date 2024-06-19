@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <title>EVENTS</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: beige;
+        }
+        img{
+            height: 30%;
+        }
+    </style>
+</head>
+<body>
+    <ul id="imgs">
+        <li><img src="https://images.pexels.com/photos/20723439/pexels-photo-20723439/free-photo-of-a-group-of-rams-laying-in-the-grass.jpeg" id="goat" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/20640688/pexels-photo-20640688/free-photo-of-sari.jpeg" id="window" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/14774843/pexels-photo-14774843.jpeg" id="gate" alt=""></li>
+        <li><img src="https://images.pexels.com/photos/17920141/pexels-photo-17920141/free-photo-of-man-on-paddle-board-on-sea-shore.jpeg" id="lake" alt=""></li>
+        <li><a href="www.pexel.com" style="color: beige;">Go to Pexel</a></li>
+    </ul>
+</body>
+<script>
+    let count = 0
+    document.querySelector("#imgs").addEventListener('click', function(e){
+        e.preventDefault()
+        if(e.target.tagName === "IMG"){
+            count ++
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            console.log(count + " Item Removed")
+        }
+        //console.log("Item Removed")
+    }, false)
+    document.querySelector("#gate").addEventListener('click',function(e){
+        console.log("This is a \"GATE\" ")
+    //    e.stopPropagation();
+    }, false )
+</script>
+</html>
